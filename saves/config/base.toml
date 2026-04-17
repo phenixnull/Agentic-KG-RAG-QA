@@ -1,0 +1,5 @@
+default_model = "fucheers/gemini-3-flash"
+fast_model = "fucheers/gemini-3-flash"
+embed_model = "local/bge-m3"
+reranker = "local/bge-reranker-v2-m3"
+enable_reranker = true

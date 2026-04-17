@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.gpu.Dockerfile
+    environment:
+      YUXI_LOCAL_MODEL_DEVICE: ${YUXI_LOCAL_MODEL_DEVICE:-cuda}
+      CUDA_VISIBLE_DEVICES: ${YUXI_LOCAL_MODEL_CUDA_VISIBLE_DEVICES:-0}
+      NVIDIA_VISIBLE_DEVICES: ${YUXI_LOCAL_MODEL_CUDA_VISIBLE_DEVICES:-0}
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    gpus: all
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/api.gpu.Dockerfile
+    environment:
+      YUXI_LOCAL_MODEL_DEVICE: ${YUXI_LOCAL_MODEL_DEVICE:-cuda}
+      CUDA_VISIBLE_DEVICES: ${YUXI_LOCAL_MODEL_CUDA_VISIBLE_DEVICES:-0}
+      NVIDIA_VISIBLE_DEVICES: ${YUXI_LOCAL_MODEL_CUDA_VISIBLE_DEVICES:-0}
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    gpus: all
