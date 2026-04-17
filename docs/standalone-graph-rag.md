@@ -70,3 +70,17 @@ This smoke test covers:
 ## Local model notes
 
 The repository assumes local embedding and reranker model directories are mounted into the containers at runtime. Model weight files are intentionally excluded from version control.
+
+## Local model source
+
+The standalone setup expects these two local model directories to be Hugging Face snapshots:
+
+- embedding: `BAAI/bge-m3`
+- reranker: `BAAI/bge-reranker-v2-m3`
+
+In this project, they are mounted from local directories such as:
+
+- `projects/refer_codebase/embedding/bge-m3`
+- `projects/refer_codebase/embedding/bge-reranker-v2-m3`
+
+Only the code and configuration are committed to Git. The actual Hugging Face model files stay outside the repository and are mounted into `api` and `worker` at runtime.

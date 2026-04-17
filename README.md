@@ -220,6 +220,15 @@ docker compose up --build
 
 [![Star History Chart](https://api.star-history.com/svg?repos=xerrors/Yuxi)](https://star-history.com/#xerrors/Yuxi)
 
+## Standalone Local Model Source
+
+The standalone CPU/GPU graph-RAG setup in this repository expects the local embedding and reranker directories to come from Hugging Face model snapshots.
+
+- Embedding model: `BAAI/bge-m3`
+- Reranker model: `BAAI/bge-reranker-v2-m3`
+
+These model weight files are not committed to Git. The repository only includes the code and configuration needed to mount local Hugging Face snapshots into the Docker containers at runtime.
+
 ## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
